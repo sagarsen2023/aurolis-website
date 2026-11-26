@@ -85,7 +85,7 @@ export function SiteFooter() {
           Aurolis
         </p>
         <div className="flex flex-col gap-3 py-8 text-[13px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Broadifi Tech Pvt Ltd. Aurolis is open source.</p>
+          <p>© 2026 Sagar Sen. Aurolis is open source.</p>
           <div className="flex gap-6">
             <a href={SITE_LINKS.repository} className="hover:text-white">
               Source code
