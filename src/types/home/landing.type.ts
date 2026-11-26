@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import type { LucideIcon } from "lucide-react";
 
 export type SplashGlyph = {
   letter: string;
@@ -11,7 +11,7 @@ export type StatementToken =
   | { kind: "word"; text: string; serif?: boolean }
   | {
       kind: "icon";
-      icon: ComponentType<{ className?: string }>;
+      icon: LucideIcon;
       accent?: boolean;
     };
 

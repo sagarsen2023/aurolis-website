@@ -1,4 +1,4 @@
-import { WireOrbit, WireSignal, WireSphere } from "@/components/wire-icons";
+import { FileDiff, GitBranch, Send } from "lucide-react";
 import type { StatementLine } from "@/types/home/landing.type";
 
 export const STATEMENT_LABEL = "Send every request, commit every change.";
@@ -8,7 +8,7 @@ export const STATEMENT_LINES: StatementLine[] = [
     indent: "pl-[0.9em] sm:pl-[1.5em]",
     tokens: [
       { kind: "word", text: "Send" },
-      { kind: "icon", icon: WireSignal },
+      { kind: "icon", icon: Send },
       { kind: "word", text: "every" },
     ],
   },
@@ -16,7 +16,7 @@ export const STATEMENT_LINES: StatementLine[] = [
     indent: "pl-0",
     tokens: [
       { kind: "word", text: "request," },
-      { kind: "icon", icon: WireOrbit },
+      { kind: "icon", icon: GitBranch },
       { kind: "word", text: "commit", serif: true },
     ],
   },
@@ -24,7 +24,7 @@ export const STATEMENT_LINES: StatementLine[] = [
     indent: "pl-[1.1em] sm:pl-[2.6em]",
     tokens: [
       { kind: "word", text: "every" },
-      { kind: "icon", icon: WireSphere, accent: true },
+      { kind: "icon", icon: FileDiff, accent: true },
       { kind: "word", text: "change" },
     ],
   },

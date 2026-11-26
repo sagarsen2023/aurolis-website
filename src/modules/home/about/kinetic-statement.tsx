@@ -84,7 +84,7 @@ function Token({ token, progress, index }: TokenProps) {
           : "border-white/85 bg-white/[0.03] text-white/90",
       )}
     >
-      <Icon className="size-[0.62em]" />
+      <Icon className="size-[0.64em]" strokeWidth={1.75} />
     </motion.span>
   );
 }
