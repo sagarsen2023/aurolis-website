@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix",
     "lint:ox": "oxlint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "deploy": "git pull && npm run build && rm -rf /var/www/aurolis.dev/* && mv dist/* /var/www/aurolis.dev/ && sudo systemctl restart nginx"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
