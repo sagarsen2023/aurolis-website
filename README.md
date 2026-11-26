@@ -29,7 +29,7 @@ The build fills `%SITE_URL%` in `index.html` (canonical link, `og:url`, `og:imag
 ## Page flow
 
 1. **Splash**: the wordmark draws itself on a starfield; the Aurolis mark stands in for the "A".
-2. **Hero**: a dotted 3D blob (React Three Fiber) behind the wordmark and an app screenshot, moving at different scroll speeds.
+2. **Hero**: a dotted 3D blob (React Three Fiber) behind the headline, a download button for the visitor's system, and the app screenshot with floating status chips, moving at different scroll speeds.
 3. **About**: the mark draws on scroll (the A lights up, then the red ball draws the orbit), followed by a kinetic statement and a word-by-word paragraph.
 4. **Features**: a large headline with floating cards, then a three-column grid with illustrations.
 5. **Footer**: the wordmark over animated wave lines, a download panel, contact email, grouped links and a large wordmark.
@@ -41,10 +41,10 @@ With `prefers-reduced-motion`, the splash is skipped and every section renders w
 - `src/routes/`: TanStack Router file routes. `index.tsx` renders `HomeModule`.
 - `src/modules/home/`: the landing page, one folder per section (`splash`, `hero`, `about`, `features`, `footer`).
 - `src/modules/layout/`: the floating navigation pill.
-- `src/components/`: shared pieces (mark, animated mark, wordmark, starfield, app window, buttons, cards, icons).
-- `src/constants/`: links, wordmark glyphs, splash timing and the about-section copy.
+- `src/components/`: shared pieces (mark, animated mark, wordmark, starfield, app window, buttons, download button, cards, icons).
+- `src/constants/`: links, download platforms, wordmark glyphs, splash timing and the about-section copy.
 - `src/lib/`: logo geometry, GLSL shaders and `cn`.
-- `src/hooks/`: smooth scrolling, in-view and media-query hooks.
+- `src/hooks/`: smooth scrolling, in-view, media-query and platform-detection hooks.
 - `src/types/home/`: types for the landing page data.
 - `public/images/`: the app screenshot (1440 and 2880 wide).
 - `public/og-image.png`: the link preview image.
