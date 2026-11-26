@@ -1,1 +1,80 @@
 @import "tailwindcss";
+@import "@fontsource-variable/wix-madefor-display";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource/tiro-kannada/400.css";
+@import "@fontsource/tiro-kannada/400-italic.css";
+
+@theme {
+  --font-sans:
+    "Wix Madefor Display Variable", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-heading: var(--font-sans);
+  --font-serif: "Tiro Kannada", Georgia, serif;
+  --font-mono:
+    "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-bg: #0c0b0c;
+  --color-panel: #131114;
+  --color-line: rgba(255, 255, 255, 0.07);
+  --color-line2: rgba(255, 255, 255, 0.13);
+  --color-lav: #edc5fc;
+  --color-lav-ink: #140f18;
+  --color-vio: #b9a3ff;
+  --color-pur: #7b5ce0;
+  --color-coral: #e73825;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+    color-scheme: dark;
+    background: var(--color-bg);
+    scroll-padding-top: 88px;
+  }
+
+  html.is-locked {
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--color-bg);
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    @apply font-mono;
+  }
+
+  ::selection {
+    background: var(--color-lav);
+    color: var(--color-lav-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}

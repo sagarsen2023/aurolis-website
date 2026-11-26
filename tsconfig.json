@@ -7,7 +7,6 @@
 
   // Path mapping
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
