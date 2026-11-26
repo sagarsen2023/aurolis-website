@@ -20,6 +20,8 @@ export type StatementLine = {
   tokens: StatementToken[];
 };
 
+export type PlatformId = "mac" | "windows" | "linux";
+
 export type FooterLink = {
   label: string;
   href: string;

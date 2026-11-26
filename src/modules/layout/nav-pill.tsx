@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { AurolisMark } from "@/components/aurolis-mark";
 import { GithubIcon } from "@/components/github-icon";
+import { Wordmark } from "@/components/wordmark";
 import { NAV_ITEMS, SITE_LINKS } from "@/constants/site";
 
 type NavPillProps = {
@@ -27,12 +28,21 @@ export function NavPill({ visible }: NavPillProps) {
         <a
           href="#top"
           aria-label="Aurolis home"
-          className="grid size-10 place-items-center rounded-xl text-white transition-colors hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-lav"
+          className="flex h-10 items-center gap-2 rounded-xl pr-3 pl-1.5 text-white transition-colors hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-lav"
         >
           <AurolisMark className="size-7" />
+          <Wordmark className="hidden h-[15px] w-auto sm:block" title="" />
         </a>
+        <span
+          aria-hidden
+          className="mx-1 hidden h-5 w-px bg-white/10 sm:block"
+        />
         {NAV_ITEMS.map((item) => (
-          <a key={item.href} href={item.href} className={ITEM}>
+          <a
+            key={item.href}
+            href={item.href}
+            className={`${ITEM} ${item.href === "#about" ? "hidden sm:flex" : ""}`}
+          >
             {item.label}
           </a>
         ))}
@@ -42,7 +52,13 @@ export function NavPill({ visible }: NavPillProps) {
           aria-label="Aurolis on GitHub"
         >
           <GithubIcon className="size-4" />
-          <span className="hidden sm:inline">GitHub</span>
+          <span className="hidden md:inline">GitHub</span>
+        </a>
+        <a
+          href="#download"
+          className="ml-1 flex min-h-10 items-center rounded-xl bg-lav px-3.5 text-[14px] font-medium whitespace-nowrap text-lav-ink transition-colors hover:bg-[#f6dcff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lav"
+        >
+          Download
         </a>
       </div>
     </motion.nav>

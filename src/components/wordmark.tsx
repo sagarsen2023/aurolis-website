@@ -14,8 +14,9 @@ export function Wordmark({ className, title = "Aurolis" }: WordmarkProps) {
     <svg
       viewBox={WORDMARK_VIEWBOX}
       fill="currentColor"
-      role="img"
-      aria-label={title}
+      role={title ? "img" : undefined}
+      aria-label={title || undefined}
+      aria-hidden={title ? undefined : true}
       className={className}
     >
       <g transform={WORDMARK_TRANSFORM}>
