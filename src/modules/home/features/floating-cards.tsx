@@ -159,7 +159,7 @@ const CARDS: FloatingCard[] = [
   {
     key: "secret",
     speed: 0.7,
-    className: "w-[244px] md:top-[50%] md:left-[79%]",
+    className: "w-[244px] md:top-[50%] md:left-[min(79%,calc(100%-264px))]",
     content: <SecretCard />,
   },
   {

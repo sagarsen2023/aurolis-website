@@ -1,6 +1,7 @@
 import { ArrowUpRight, Star } from "lucide-react";
 import { LinkButton } from "@/components/link-button";
-import { FOOTER_LINKS, SITE_LINKS } from "@/constants/site";
+import { CONTACT_EMAIL, FOOTER_GROUPS, SITE_LINKS } from "@/constants/site";
+import { cn } from "@/lib/cn";
 
 export function SiteFooter() {
   return (
@@ -23,6 +24,15 @@ export function SiteFooter() {
                 aria-hidden
               />
             </a>
+            <p className="mt-4 text-[16px] text-white/60">
+              Or email{" "}
+              <a
+                href={SITE_LINKS.email}
+                className="text-white underline decoration-white/30 underline-offset-4 transition-colors hover:text-lav hover:decoration-lav"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </p>
           </div>
           <div className="max-w-[20rem]">
             <p className="text-[18px] font-medium">Follow the project</p>
@@ -40,16 +50,32 @@ export function SiteFooter() {
         </div>
         <nav
           aria-label="Footer"
-          className="mt-16 grid grid-cols-2 gap-x-8 gap-y-1 border-b border-white/15 pb-8 sm:flex sm:flex-wrap sm:justify-between"
+          className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 border-b border-white/15 pb-10 sm:grid-cols-3"
         >
-          {FOOTER_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="flex min-h-11 items-center text-[18px] text-white/85 transition-colors hover:text-lav"
+          {FOOTER_GROUPS.map((group, index) => (
+            <div
+              key={group.title}
+              className={cn(
+                index === FOOTER_GROUPS.length - 1 &&
+                  "col-span-2 sm:col-span-1",
+              )}
             >
-              {link.label}
-            </a>
+              <h2 className="text-[13px] font-medium tracking-[0.08em] text-white/45 uppercase">
+                {group.title}
+              </h2>
+              <ul className="mt-3">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="flex min-h-11 items-center text-[17px] text-white/85 transition-colors hover:text-lav"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </nav>
         <p
@@ -64,8 +90,8 @@ export function SiteFooter() {
             <a href={SITE_LINKS.repository} className="hover:text-white">
               Source code
             </a>
-            <a href={SITE_LINKS.issues} className="hover:text-white">
-              Report an issue
+            <a href={SITE_LINKS.email} className="hover:text-white">
+              Contact
             </a>
           </div>
         </div>

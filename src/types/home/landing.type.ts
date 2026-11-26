@@ -19,3 +19,13 @@ export type StatementLine = {
   indent: string;
   tokens: StatementToken[];
 };
+
+export type FooterLink = {
+  label: string;
+  href: string;
+};
+
+export type FooterGroup = {
+  title: string;
+  links: FooterLink[];
+};
