@@ -18,13 +18,7 @@ npm run lint:fix     # ESLint + Prettier auto-fix
 
 ## Link previews
 
-`public/og-image.png` (1200 x 630) is the Open Graph and Twitter image. Social sites need absolute URLs, so set the deployed address before building:
-
-```bash
-cp .env.example .env   # then set VITE_PUBLIC_SITE_URL to the site address
-```
-
-The build fills `%SITE_URL%` in `index.html` (canonical link, `og:url`, `og:image`, `twitter:image`) with that value.
+`public/og-image.png` (1200 x 630) is the Open Graph and Twitter image. Social sites need absolute URLs, so the build fills `%SITE_URL%` in `index.html` (canonical link, `og:url`, `og:image`, `twitter:image`) with `VITE_PUBLIC_SITE_URL`. `.env.production` sets it to `https://aurolis.dev`; override it in `.env.production.local` for another host.
 
 ## Page flow
 
