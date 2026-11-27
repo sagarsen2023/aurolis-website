@@ -1,9 +1,17 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Star } from "lucide-react";
 import { LinkButton } from "@/components/link-button";
 import { CONTACT_EMAIL, FOOTER_GROUPS, SITE_LINKS } from "@/constants/site";
 import { cn } from "@/lib/cn";
 
-export function SiteFooter() {
+type SiteFooterProps = {
+  anchorBase?: string;
+};
+
+export function SiteFooter({ anchorBase = "" }: SiteFooterProps) {
+  const resolve = (href: string) =>
+    href.startsWith("#") ? `${anchorBase}${href}` : href;
+
   return (
     <footer className="relative overflow-hidden px-[max(4vw,16px)] pt-[clamp(80px,10vw,140px)]">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(ellipse_70%_60%_at_50%_100%,rgba(106,70,255,0.6),rgba(80,50,220,0.18)_50%,transparent_75%)]" />
@@ -67,7 +75,7 @@ export function SiteFooter() {
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <a
-                      href={link.href}
+                      href={resolve(link.href)}
                       className="flex min-h-11 items-center text-[17px] text-white/85 transition-colors hover:text-lav"
                     >
                       {link.label}
@@ -87,6 +95,9 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3 py-8 text-[13px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Sagar Sen. Aurolis is open source.</p>
           <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-white">
+              Privacy
+            </Link>
             <a href={SITE_LINKS.repository} className="hover:text-white">
               Source code
             </a>
